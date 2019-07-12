@@ -13,11 +13,13 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int left = Integer.min(leftBorder, rightBorder);
+        int right = Integer.max(leftBorder, rightBorder);
+        return IntStream.range(left, right + 1).filter(e -> e % 2 != 0).sum();
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().mapToInt(x -> x * 3 + 2).sum();
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
