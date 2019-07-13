@@ -14,7 +14,8 @@ public class CollectionOperator {
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+        return left < right ? IntStream.rangeClosed(left, right).boxed().filter(e -> e % 2 == 0).collect(Collectors.toList()) :
+                IntStream.rangeClosed(right, left).boxed().filter(e -> e % 2 == 0).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
     public List<Integer> popEvenElments(int[] array) {
